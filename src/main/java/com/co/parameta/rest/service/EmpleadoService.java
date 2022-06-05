@@ -1,11 +1,7 @@
-package com.co.parameta.service;
+package com.co.parameta.rest.service;
 
-import com.co.parameta.controller.dto.EmpleadoDTO;
-import com.co.parameta.repository.EmpleadoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import com.co.parameta.rest.controller.dto.EmpleadoDTO;
 import org.springframework.stereotype.Service;
-
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
@@ -15,38 +11,11 @@ import java.util.Date;
 @Service
 public class EmpleadoService {
 
-    @Autowired
-    private EmpleadoRepository empleadoRepository;
-
     public String validacionesInformacionEmpleado(EmpleadoDTO empleadoDTO) throws Exception {
-
-        String validacionesEmpleado = "";
-
-        validacionesEmpleado = validacionesCampos(empleadoDTO);
-
-        if(validacionesEmpleado.equals("")) {
-            // invocar soap
-        } else {
-            throw new Exception(validacionesEmpleado);
-        }
-
-        return "";
+        return validacionesEmpleado(empleadoDTO);
     }
 
-    public String validacionFormatoCorrectoFecha(String fecha, String tipoFecha) {
-
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        String validaciones = "";
-
-        try {
-            formatter.parse(fecha);
-        }catch (Exception ex) {
-            validaciones = "La fecha " + tipoFecha + " no tiene el formato dd/MM/yyyy \n";
-        }
-        return validaciones;
-    }
-
-    public String validacionesCampos(EmpleadoDTO empleadoDTO) throws Exception {
+    public String validacionesEmpleado(EmpleadoDTO empleadoDTO) throws Exception {
 
         String validaciones = "";
 
@@ -91,6 +60,19 @@ public class EmpleadoService {
             validaciones = validaciones + "El salario es obligatorio \n";
         }
 
+        return validaciones;
+    }
+
+    public String validacionFormatoCorrectoFecha(String fecha, String tipoFecha) {
+
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String validaciones = "";
+
+        try {
+            formatter.parse(fecha);
+        }catch (Exception ex) {
+            validaciones = "La fecha " + tipoFecha + " no tiene el formato dd/MM/yyyy \n";
+        }
         return validaciones;
     }
 

@@ -1,0 +1,42 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://parameta.co.com/soap/ws/empleado"
+           targetNamespace="http://parameta.co.com/soap/ws/empleado"
+           elementFormDefault="qualified">
+
+    <xs:element name="createEmpleadoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="empleadoSoapDTO" type="tns:empleadoSoapDTO" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createEmpleadoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="data" type="tns:empleadoResponse" />
+                <xs:element name="status" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="empleadoResponse">
+        <xs:sequence>
+            <xs:element name="empleadoSoapDTO" type="tns:empleadoSoapDTO" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="empleadoSoapDTO">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long" />
+            <xs:element name="nombre" type="xs:string" />
+            <xs:element name="apellidos" type="xs:string" />
+            <xs:element name="tipoDocumento" type="xs:string" />
+            <xs:element name="numeroDocumento" type="xs:string" />
+            <xs:element name="fecha" type="xs:string" />
+            <xs:element name="fechaVinculacionCompania" type="xs:string" />
+            <xs:element name="cargo" type="xs:string" />
+            <xs:element name="salary" type="xs:double" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,9 +1,6 @@
-package com.co.parameta.controller.dto;
+package com.co.parameta.rest.controller.dto;
 
-import com.co.parameta.utilidades.CalcularConFechas;
-
-import javax.persistence.*;
-import java.util.Date;
+import com.co.parameta.soap.utils.CalcularConFechas;
 
 public class EmpleadoDTO {
 
