@@ -1,6 +1,6 @@
 package com.co.parameta.rest.controller.dto;
 
-import com.co.parameta.soap.utils.CalcularConFechas;
+import com.co.parameta.rest.utils.CalcularConFechas;
 
 public class EmpleadoDTO {
 

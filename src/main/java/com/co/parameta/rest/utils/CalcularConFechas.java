@@ -1,4 +1,4 @@
-package com.co.parameta.soap.utils;
+package com.co.parameta.rest.utils;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;

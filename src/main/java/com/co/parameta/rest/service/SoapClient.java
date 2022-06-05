@@ -4,7 +4,6 @@ import com.co.parameta.rest.controller.dto.EmpleadoDTO;
 import com.co.parameta.rest.service.converters.EmpleadoRestConverter;
 import com.co.parameta.soap.ws.empleado.CreateEmpleadoRequest;
 import com.co.parameta.soap.ws.empleado.CreateEmpleadoResponse;
-import com.co.parameta.soap.ws.empleado.EmpleadoResponse;
 import com.co.parameta.soap.ws.empleado.EmpleadoSoapDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;

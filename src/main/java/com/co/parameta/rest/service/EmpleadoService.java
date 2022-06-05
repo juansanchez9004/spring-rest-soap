@@ -11,32 +11,28 @@ import java.util.Date;
 @Service
 public class EmpleadoService {
 
-    public String validacionesInformacionEmpleado(EmpleadoDTO empleadoDTO) throws Exception {
-        return validacionesEmpleado(empleadoDTO);
-    }
-
     public String validacionesEmpleado(EmpleadoDTO empleadoDTO) throws Exception {
 
         String validaciones = "";
 
         if(empleadoDTO.getNombre() == null || empleadoDTO.getNombre().equals("")) {
-            validaciones = validaciones + "El nombre es obligatorio \n";
+            validaciones = validaciones + "El nombre es obligatorio **** ";
         }
 
         if(empleadoDTO.getApellidos() == null || empleadoDTO.getApellidos().equals("")) {
-            validaciones = validaciones + "El apellido es obligatorio \n";
+            validaciones = validaciones + "El apellido es obligatorio **** ";
         }
 
         if(empleadoDTO.getTipoDocumento() == null || empleadoDTO.getTipoDocumento().equals("")) {
-            validaciones = validaciones + "El tipo documento es obligatorio \n";
+            validaciones = validaciones + "El tipo documento es obligatorio **** ";
         }
 
         if(empleadoDTO.getNumeroDocumento() == null ||empleadoDTO.getNumeroDocumento().equals("")) {
-            validaciones = validaciones + "El numero de documento es obligatorio \n";
+            validaciones = validaciones + "El numero de documento es obligatorio **** ";
         }
 
         if(empleadoDTO.getFecha() == null || empleadoDTO.getFecha().equals("")) {
-            validaciones = validaciones + "El fecha nacimiento es obligatorio \n";
+            validaciones = validaciones + "El fecha nacimiento es obligatorio **** ";
         }
 
         if(empleadoDTO.getFecha() != null) {
@@ -45,7 +41,7 @@ public class EmpleadoService {
         }
 
         if(empleadoDTO.getFechaVinculacionCompania() == null || empleadoDTO.getFechaVinculacionCompania().equals("")) {
-            validaciones = validaciones + "El fecha vinculacion es obligatorio \n";
+            validaciones = validaciones + "El fecha vinculacion es obligatorio **** ";
         }
 
         if(empleadoDTO.getFechaVinculacionCompania() != null) {
@@ -53,11 +49,11 @@ public class EmpleadoService {
         }
 
         if(empleadoDTO.getCargo() == null || empleadoDTO.getCargo().equals("")) {
-            validaciones = validaciones + "El cargo es obligatorio \n";
+            validaciones = validaciones + "El cargo es obligatorio **** ";
         }
 
         if(empleadoDTO.getSalario() == null || empleadoDTO.getSalario().equals("")) {
-            validaciones = validaciones + "El salario es obligatorio \n";
+            validaciones = validaciones + "El salario es obligatorio **** ";
         }
 
         return validaciones;
@@ -71,7 +67,7 @@ public class EmpleadoService {
         try {
             formatter.parse(fecha);
         }catch (Exception ex) {
-            validaciones = "La fecha " + tipoFecha + " no tiene el formato dd/MM/yyyy \n";
+            validaciones = "La fecha " + tipoFecha + " no tiene el formato dd/MM/yyyy **** ";
         }
         return validaciones;
     }
@@ -89,7 +85,7 @@ public class EmpleadoService {
             Period edad = Period.between(fechaNacimientoLocalDate, LocalDate.now());
 
             if(edad.getYears() < 18) {
-                validacion = "El empleado no es mayor de edad";
+                validacion = "El empleado no es mayor de edad **** ";
             }
             return validacion;
         } catch (Exception ex) {

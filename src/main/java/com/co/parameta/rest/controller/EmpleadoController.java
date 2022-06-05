@@ -27,7 +27,7 @@ public class EmpleadoController {
 
     @GetMapping
     public ResponseEntity<EmpleadoDTO> crearEmpleado(@RequestBody EmpleadoDTO empleadoDTO) throws Exception {
-        String validacionesEmpleado = empleadoService.validacionesInformacionEmpleado(empleadoDTO);
+        String validacionesEmpleado = empleadoService.validacionesEmpleado(empleadoDTO);
 
         if(!validacionesEmpleado.equals("")) {
             throw new IllegalArgumentException(validacionesEmpleado);
