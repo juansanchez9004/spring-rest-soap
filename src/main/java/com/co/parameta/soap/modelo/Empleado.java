@@ -1,4 +1,4 @@
-package com.co.parameta.modelo;
+package com.co.parameta.soap.modelo;
 
 import javax.persistence.*;
 import java.util.Date;
